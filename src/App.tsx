@@ -1,12 +1,24 @@
+import { Header } from "./components/Header";
+import { Page, usePage } from "./contexts/Page";
+
 const App = () => {
+  const { page } = usePage();
+
+  const renderSwitch = () => {
+    switch (page) {
+      case Page.Articles:
+        return <div>Articles</div>;
+      case Page.Authors:
+        return <div>Authors</div>;
+      default:
+        return "";
+    }
+  };
+
   return (
     <div className="App">
-      <header>
-        <h1>
-          <div className="title">TypeScript CRUD</div>
-          <div className="subtitle">With react and TypeORM</div>
-        </h1>
-      </header>
+      <Header />
+      {renderSwitch()}
     </div>
   );
 };
