@@ -1,15 +1,17 @@
 import { Header } from "./components/Header";
 import { Page, usePage } from "./contexts/Page";
+import { ArticleIndex } from "./pages/Article";
+import { AuthorIndex } from "./pages/Author";
 
-const App = () => {
+const App: React.FC = () => {
   const { page } = usePage();
 
   const renderSwitch = () => {
     switch (page) {
       case Page.Articles:
-        return <div>Articles</div>;
+        return <ArticleIndex />;
       case Page.Authors:
-        return <div>Authors</div>;
+        return <AuthorIndex />;
       default:
         return "";
     }

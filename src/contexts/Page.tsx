@@ -18,7 +18,7 @@ const Context = createContext<ContextType>({
 export const usePage = () => useContext(Context);
 
 interface PageStoreProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode | React.ReactNode[];
 }
 
 export const PageStore: React.FC<PageStoreProps> = ({ children }) => {
